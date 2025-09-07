@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="particles"></div>
+    <div class="container">
+        <header class="game-header">
+            <h1><i class="fas fa-gamepad"></i> Ultimate Tic Tac Toe</h1>
+            <div class="theme-toggle">
+                <button id="themeBtn" class="theme-btn"><i class="fas fa-moon"></i></button>
+            </div>
+        </header>
+        
+        <div id="setup-screen" class="setup-screen">
+            <div class="setup-card">
+                <h2>Ready to Play?</h2>
+                <div class="player-inputs">
+                    <div class="input-group">
+                        <i class="fas fa-user player-x-icon"></i>
+                        <input type="text" id="playerX" placeholder="Player X Name" maxlength="15">
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-user player-o-icon"></i>
+                        <input type="text" id="playerO" placeholder="Player O Name" maxlength="15">
+                    </div>
+                </div>
+                <div class="difficulty-select">
+                    <label>Game Mode:</label>
+                    <select id="gameMode">
+                        <option value="pvp">Player vs Player</option>
+                        <option value="ai-easy">vs AI (Easy)</option>
+                        <option value="ai-hard">vs AI (Hard)</option>
+                    </select>
+                </div>
+                <button id="startBtn" class="start-btn">
+                    <i class="fas fa-play"></i> Start Game
+                </button>
+            </div>
+        </div>
+
+        <div id="game-screen" class="game-screen hidden">
+            <div class="game-stats">
+                <div class="score-board">
+                    <div class="player-score player-x" id="scoreX">
+                        <div class="player-avatar"><i class="fas fa-times"></i></div>
+                        <div class="score-info">
+                            <span class="player-name">Player X</span>
+                            <span class="score-count">0</span>
+                        </div>
+                    </div>
+                    <div class="vs-divider">VS</div>
+                    <div class="player-score player-o" id="scoreO">
+                        <div class="player-avatar"><i class="fas fa-circle-notch"></i></div>
+                        <div class="score-info">
+                            <span class="player-name">Player O</span>
+                            <span class="score-count">0</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-timer">
+                    <i class="fas fa-clock"></i>
+                    <span id="timer">00:00</span>
+                </div>
+            </div>
+            
+            <div class="game-info">
+                <div id="turn-indicator" class="turn-indicator">
+                    <span class="turn-text">Player X's Turn</span>
+                    <div class="turn-timer"></div>
+                </div>
+                <div id="game-status" class="game-status"></div>
+            </div>
+            
+            <div class="game-board-container">
+                <div class="game-board" id="gameBoard">
+                    <div class="cell" data-index="0"><span class="cell-content"></span></div>
+                    <div class="cell" data-index="1"><span class="cell-content"></span></div>
+                    <div class="cell" data-index="2"><span class="cell-content"></span></div>
+                    <div class="cell" data-index="3"><span class="cell-content"></span></div>
+                    <div class="cell" data-index="4"><span class="cell-content"></span></div>
+                    <div class="cell" data-index="5"><span class="cell-content"></span></div>
+                    <div class="cell" data-index="6"><span class="cell-content"></span></div>
+                    <div class="cell" data-index="7"><span class="cell-content"></span></div>
+                    <div class="cell" data-index="8"><span class="cell-content"></span></div>
+                </div>
+            </div>
+            
+            <div class="game-controls">
+                <button id="newGameBtn" class="control-btn secondary">
+                    <i class="fas fa-redo"></i> New Game
+                </button>
+                <button id="restartBtn" class="control-btn primary">
+                    <i class="fas fa-home"></i> Main Menu
+                </button>
+            </div>
+        </div>
+        
+        <footer class="game-footer">
+            <p>Created by <span class="creator-name">Ankit Dubey</span></p>
+        </footer>
+    </div>
+    
+    <div id="winModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="winner-animation">
+                <i class="fas fa-trophy"></i>
+            </div>
+            <h2 id="winnerText">Player X Wins!</h2>
+            <div class="confetti"></div>
+            <button id="playAgainBtn" class="modal-btn">
+                <i class="fas fa-play"></i> Play Again
+            </button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
