@@ -22,7 +22,7 @@ Tic Tac Toe is a lightweight, accessible implementation of the classic 3×3 game
 > Optionally adaptable to React for component-based structure
 
 ## 🚀 Live demo
-Add a link here if you host it (GitHub Pages, Netlify, Vercel, etc.)
+[Click here to try it out](#) _( https://itsankitdubeyy.github.io/Tic-Tac-Toe/ )_
 
 ## 🔁 Installation / Run locally
 1. Clone the repository:
